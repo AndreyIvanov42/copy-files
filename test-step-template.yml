@@ -1,0 +1,37 @@
+parameters:
+  - name: 'pattern'
+    type: string
+  - name: 'displayName'
+    type: string
+  - name: 'cleanTargetFolder'
+    type: boolean
+  - name: 'overWrite'
+    type: boolean
+  - name: 'flattenFolders'
+    type: boolean
+  - name: 'validatonScriptArguments'
+    type: string
+  - name: 'preserveTimestamp'
+    type: boolean
+  - name: 'validationStepDisplayName'
+    type: string
+  - name: 'pathToValidationScript'
+    type: string
+
+steps:
+  - task: CopyFilesNode16@2
+    displayName: ${{ parameters.displayName }}
+    inputs:
+      SourceFolder: 'source'
+      Contents: |
+        ${{ parameters.pattern }}
+      TargetFolder: 'target'
+      CleanTargetFolder: ${{ parameters.cleanTargetFolder }}
+      OverWrite: ${{ parameters.overWrite }}
+      flattenFolders: ${{ parameters.flattenFolders }}
+      preserveTimestamp: ${{ parameters.preserveTimestamp }}
+  - task: Bash@3
+    displayName: ${{ parameters.validationStepDisplayName }}
+    inputs:
+      filePath: ${{ parameters.pathToValidationScript }}
+      arguments: ${{ parameters.validatonScriptArguments }}

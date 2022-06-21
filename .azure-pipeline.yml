@@ -1,0 +1,8 @@
+jobs:
+  pool: default
+  steps:
+    - template: copy-files-steps-without-timestamp-check.yml
+
+  pool: default
+  steps:
+    - template: copy-files-steps.yml
