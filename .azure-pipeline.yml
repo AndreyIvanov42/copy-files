@@ -5,3 +5,4 @@ pool: default
 
 steps:
   - template: copy-files-steps.yml
+  - template: copy-files-steps-without-timestamp-check.yml
