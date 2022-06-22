@@ -33,5 +33,6 @@ steps:
   - task: Bash@3
     displayName: ${{ parameters.validationStepDisplayName }}
     inputs:
+      bashEnvValue: 'C:\windows\system32\bash.exe'
       filePath: ${{ parameters.pathToValidationScript }}
       arguments: ${{ parameters.validatonScriptArguments }}
