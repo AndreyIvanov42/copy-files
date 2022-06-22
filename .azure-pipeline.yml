@@ -1,7 +1,10 @@
 trigger:
 - master
 
-pool: macos
+pool: default
+
+variables:
+  BASH_ENV: 'C:\windows\system32\bash.exe'
 
 steps:
   - template: copy-files-steps.yml
