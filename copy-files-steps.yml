@@ -22,6 +22,7 @@ steps:
         touch root-file2.css
         touch root-file3.js
         mkdir target
+        printenv
   
   - template: test-step-template.yml
     parameters:
