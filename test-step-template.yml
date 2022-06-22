@@ -35,5 +35,5 @@ steps:
     inputs:
       filePath: ${{ parameters.pathToValidationScript }}
       arguments: ${{ parameters.validatonScriptArguments }}
-     env:
+    env:
       BASH_ENV: 'C:\windows\system32\bash.exe'
