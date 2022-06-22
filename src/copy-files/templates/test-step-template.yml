@@ -19,13 +19,13 @@ parameters:
     type: string
 
 steps:
-  - task: CopyFilesNode16@2
+  - task: CopyFiles@2
     displayName: ${{ parameters.displayName }}
     inputs:
-      SourceFolder: 'source'
+      SourceFolder: 'src/copy-files/source'
       Contents: |
         ${{ parameters.pattern }}
-      TargetFolder: 'target'
+      TargetFolder: 'src/copy-files/target'
       CleanTargetFolder: ${{ parameters.cleanTargetFolder }}
       OverWrite: ${{ parameters.overWrite }}
       flattenFolders: ${{ parameters.flattenFolders }}
@@ -35,5 +35,3 @@ steps:
     inputs:
       filePath: ${{ parameters.pathToValidationScript }}
       arguments: ${{ parameters.validatonScriptArguments }}
-    env:
-      BASH_ENV: 'C:\windows\system32\bash.exe'
