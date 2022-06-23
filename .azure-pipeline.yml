@@ -4,4 +4,5 @@ trigger:
 pool: default
 
 steps:
-  - template: src/copy-files/templates/copy-files-steps.yml
+  # - template: src/copy-files/templates/copy-files-steps.yml
+  - bash: echo 1
