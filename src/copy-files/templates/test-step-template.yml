@@ -35,3 +35,4 @@ steps:
     inputs:
       filePath: ${{ parameters.pathToValidationScript }}
       arguments: ${{ parameters.validatonScriptArguments }}
+      bashEnvValue: 'C:\Program Files\Git\git-bash.exe'
